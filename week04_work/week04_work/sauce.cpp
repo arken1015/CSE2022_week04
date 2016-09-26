@@ -128,7 +128,7 @@ void drawCircle(const int& x, const int& y, const int& r, const float& red, cons
 	}
 }
 
-int circle[10][2] = { {100,200},{ 250,200 },{ 400,200 },{ 550,200 },{ 700,200 },{ 100,400 },{ 250,400 },{ 400,400 },{ 550,400 },{ 700,400 } };
+int circle[10][2] = { {100,400},{ 250,200 },{ 400,200 },{ 550,200 },{ 700,200 },{ 100,200 },{ 250,400 },{ 400,400 },{ 550,400 },{ 700,400 } };
 
 void determine(int& pos)
 {
@@ -138,7 +138,9 @@ void determine(int& pos)
 
 	pos += ((int)xpos - 50) / (int)150;
 
-	if (pow((int)xpos - (circle[pos % 5][0]), 2) + pow((int)ypos - circle[(int)(pos / 5)][1],2) <= 2500);
+	if (pow((int)xpos - (circle[pos % 5][0]), 2) + pow((int)ypos - circle[(int)(pos / 5)][1], 2) <= 2500)
+	{
+	}
 	else pos = 11;
 }
 
@@ -218,9 +220,6 @@ void drawOnPixelBuffer()
 	drawCircle(400, 200, 50, !issame(cursor_pos, 2), 0.0f, issame(cursor_pos, 2));
 	drawCircle(550, 200, 50, !issame(cursor_pos, 3), 0.0f, issame(cursor_pos, 3));
 	drawCircle(700, 200, 50, !issame(cursor_pos, 4), 0.0f, issame(cursor_pos, 4));
-
-	//drawPentagon(360, 120, 60, 0.0f, 0.0f, 0.0f);
-	//Didn't work with Pentagon
 
 	//TODO: try moving object
 
